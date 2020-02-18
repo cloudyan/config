@@ -1,2 +1,7 @@
-# conf
-developer conf
+# config
+
+developer config
+
+- conf
+- script
+- shell
