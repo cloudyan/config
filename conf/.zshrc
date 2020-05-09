@@ -70,6 +70,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  sudo
   z
   history
   git-open
@@ -78,9 +79,11 @@ plugins=(
 )
 
 # plugins 参考
+# - https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
 # - https://zhuanlan.zhihu.com/p/62501175
 # - https://juejin.im/entry/5ae00e54f265da0b8635ea5c
 
+# 偶尔输入某个命令，提示没有权限，需要加sudo，这个时候按两下ESC，就会在命令行头部加上sudo
 # git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
 # git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
