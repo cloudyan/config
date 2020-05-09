@@ -71,11 +71,17 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   z
+  history
+  git-open
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
 
-# plugins => https://zhuanlan.zhihu.com/p/62501175
+# plugins 参考
+# - https://zhuanlan.zhihu.com/p/62501175
+# - https://juejin.im/entry/5ae00e54f265da0b8635ea5c
+
+# git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
 # git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
@@ -120,6 +126,14 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias cls='clear'
 alias ll='ls -l'
+
+# 安装一个 trash 命令，替代 rm 命令，被删除的文件会放到垃圾桶
+# 需要全局安装 npm install -g trash-cli
+alias rm='trash'
+
+# 防止 copy 的时候覆盖已存在的文件, 带上 i 选项，
+# 文件已存在的时候，会提示，需要确认才能 copy
+alias cp='cp -i'
 
 # macOS (Darwin) ls doesn't support the --color option.
 # alias ls="ls --color=auto"
