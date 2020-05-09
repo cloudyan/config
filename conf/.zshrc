@@ -7,7 +7,7 @@ export ZSH="/Users/$(whoami)/.oh-my-zsh"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
@@ -68,11 +68,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  z
-  zsh-better-npm-completion
-)
+plugins=(git z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -81,10 +77,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-# export LANG=zh_CN.UTF.8
-# export LC_ALL=zh_CN.UTF.8
+# export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -95,11 +88,6 @@ export LANG=en_US.UTF-8
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -110,30 +98,29 @@ export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias readlink=greadlink
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias cls='clear'
 alias ll='ls -l'
-alias ls="ls --color=auto"
+
+# macOS (Darwin) ls doesn't support the --color option.
+# alias ls="ls --color=auto"
+
 alias la="ls -a"
 alias tree='tree -N'
 alias ltree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias vi=' vim'
 alias grep="grep --color=auto"
 
-alias xxx="/Applications/HBuilderX-Alpha.app/Contents/MacOS/HBuilderX &"
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 # Beyond Compare
 rm "/Users/$(whoami)/Library/Application Support/Beyond Compare/registry.dat"
 
-
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
-export MONO_GAC_PREFIX="/usr/local"
-export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
 
-export PATH="/usr/local/opt/libxml2/bin:$PATH"
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+
