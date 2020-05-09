@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/dwd/.oh-my-zsh"
+export ZSH="/Users/$(whoami)/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -116,7 +116,6 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias cls='clear'
 alias ll='ls -l'
-alias cd="cd"
 alias ls="ls --color=auto"
 alias la="ls -a"
 alias tree='tree -N'
