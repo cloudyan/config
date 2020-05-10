@@ -76,6 +76,7 @@ plugins=(
   git-open
   zsh-autosuggestions
   zsh-syntax-highlighting
+  zsh-better-npm-completion
 )
 
 # plugins 参考
@@ -105,7 +106,9 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-
+# export LC_ALL=en_US.UTF-8
+# export LANG=zh_CN.UTF-8
+# export LC_ALL=zh_CN.UTF-8
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -125,11 +128,23 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+
+# source ~/.oh-my-zsh/plugins/incr/incr*.zsh
+
+
+
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias cls='clear'
 alias ll='ls -l'
+alias la="ls -a"
+
+# macOS (Darwin) ls doesn't support the --color option.
+# alias ls="ls --color=auto"
 
 # 安装一个 trash 命令，替代 rm 命令，被删除的文件会放到垃圾桶
 # 需要全局安装 npm install -g trash-cli
@@ -139,24 +154,20 @@ alias rm='trash'
 # 文件已存在的时候，会提示，需要确认才能 copy
 alias cp='cp -i'
 
-# macOS (Darwin) ls doesn't support the --color option.
-# alias ls="ls --color=auto"
-
-alias la="ls -a"
 alias tree='tree -N'
 alias ltree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias vi=' vim'
 alias grep="grep --color=auto"
 
+# alias uni-build="node /Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/bin/uniapp-cli.js"
+
+# alias xxx="/Applications/HBuilderX-Alpha.app/Contents/MacOS/HBuilderX &"
+
 # Beyond Compare
 rm "/Users/$(whoami)/Library/Application Support/Beyond Compare/registry.dat"
+
 
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
-
-# source ~/.oh-my-zsh/plugins/incr/incr*.zsh
