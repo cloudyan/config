@@ -86,17 +86,22 @@ plugins=(
 
 # 偶尔输入某个命令，提示没有权限，需要加sudo，这个时候按两下ESC，就会在命令行头部加上sudo
 # git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
+
+# 语法历史记录插件
 # git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
+# 语法高亮插件
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 # git clone https://github.com/lukechilds/zsh-better-npm-completion $ZSH_CUSTOM/plugins/zsh-better-npm-completion
 
-# install incr
+# install incr 补全插件
 # 官站 http://mimosa-pudica.net/zsh-incremental.html
 # wget http://mimosa-pudica.net/src/incr-0.2.zsh
 # mkdir ~/.oh-my-zsh/plugins/incr
 # mv incr-0.2.zsh ~/.oh-my-zsh/plugins/incr
 # echo 'source ~/.oh-my-zsh/plugins/incr/incr*.zsh' >> ~/.zshrc
-
+# 使用自动补全插件可能会与vim的提示功能相冲突，如会报以下错误，此时，将~/.zcompdump*删除即可
+# _arguments:451: _vim_files: function definition file not found
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,11 +109,24 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
+# 使用中文手册 https://github.com/man-pages-zh/manpages-zh
+# .zshrc 添加手册路径
+# MANPATH /usr/local/share/man              #line 44
+# MANPATH /usr/local/share/man/zh_CN        #添加中文手册路径
+
+# 如果系统的groff版本太低，文档可能出现乱码，可以将groff更新到最新版本
+# https://www.cnblogs.com/wujinhong/p/7251376.html
+# https://www.cnblogs.com/himonkey/p/11853564.html
+
+# 查看已经加载的 man 手册列表
+# $ man -aw
+# $ /usr/local/share/man:/usr/share/man:/usr/local/share/man/zh_CN         #已经加载
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 # export LC_ALL=en_US.UTF-8
-# export LANG=zh_CN.UTF-8
-# export LC_ALL=zh_CN.UTF-8
+
+
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -171,3 +189,6 @@ export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bott
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
 
+# 升级 oh-my-zsh
+# 手动执行 upgrade_oh_my_zsh
+# 自动执行，配置 DISABLE_UPDATE_PROMPT=true
