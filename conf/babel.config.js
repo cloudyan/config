@@ -10,7 +10,9 @@
   // 需要全局安装 `npm i -g babel-cli babel-preset-stage-0`
   // "javascript": "babel-node --presets=stage-0",
   // babel 7
+  // 需要全局安装 npm i -g @babel/core @babel/node
   "javascript": "babel-node --config-file=~/babel.config.js", // https://babeljs.io/docs/en/babel-node
+  // "javascript": "babel-node --presets=@babel/preset-env",
   "md": "babel-node",
   "vue": "babel-node"
 },
