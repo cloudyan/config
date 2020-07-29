@@ -27,7 +27,7 @@ module.exports = {
       {
         targets: {
           // node: 'current',
-          esmodules: false,
+          // esmodules: false,
 
         }
       }

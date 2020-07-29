@@ -1,3 +1,9 @@
+
+// import { add } from './es'
+
+// 还不支持 es6
+// console.log(add(1, 2))
+
 function findIndex(nums) {
   for (let i = nums.length - 2; i>=0; i--) {
     if (nums[i] < nums[i+1]) return i
