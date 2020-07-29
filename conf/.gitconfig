@@ -3,7 +3,7 @@
 	email = youremail@email.com
 [core]
 	filemode = false
-	excludesfile = /Users/dwd/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = /usr/bin/vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
@@ -15,6 +15,7 @@
 	default = simple
 [alias]
     co = checkout
+    cp = cherry-pick
     ci = commit
     st = status
     br = branch
@@ -22,6 +23,10 @@
     type = cat-file -t
     dump = cat-file -p
     mg = merge --no-ff
+[commit]
+	template = ~/.stCommitMsg
+[credential]
+	helper = osxkeychain
 
 [http]
 	postBuffer = 524288000
@@ -29,3 +34,5 @@
 [https]
 	postBuffer = 524288000
 	# proxy = socks5://127.0.0.1:1086
+[hub]
+	protocol = https
