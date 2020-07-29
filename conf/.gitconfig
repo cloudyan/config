@@ -14,15 +14,15 @@
 [push]
 	default = simple
 [alias]
-    co = checkout
-    cp = cherry-pick
-    ci = commit
-    st = status
-    br = branch
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    type = cat-file -t
-    dump = cat-file -p
-    mg = merge --no-ff
+	co = checkout
+	cp = cherry-pick
+	ci = commit
+	st = status
+	br = branch
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	type = cat-file -t
+	dump = cat-file -p
+	mg = merge --no-ff
 [commit]
 	template = ~/.stCommitMsg
 [credential]

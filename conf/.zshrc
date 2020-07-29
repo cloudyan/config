@@ -192,3 +192,21 @@ export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottl
 # 升级 oh-my-zsh
 # 手动执行 upgrade_oh_my_zsh
 # 自动执行，配置 DISABLE_UPDATE_PROMPT=true
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export PATH="/Users/dwd/opt/anaconda3/bin:$PATH"
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/Users/dwd/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/Users/dwd/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "/Users/dwd/opt/anaconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/Users/dwd/opt/anaconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# <<< conda initialize <<<
