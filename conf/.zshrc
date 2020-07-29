@@ -176,6 +176,7 @@ alias tree='tree -N'
 alias ltree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias vi=' vim'
 alias grep="grep --color=auto"
+alias hs="http-server"
 
 # alias uni-build="node /Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/bin/uniapp-cli.js"
 
@@ -184,10 +185,29 @@ alias grep="grep --color=auto"
 # Beyond Compare
 rm "/Users/$(whoami)/Library/Application Support/Beyond Compare/registry.dat"
 
+# 替换brew.git:
+# cd "$(brew --repo)"
+# git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git
+# # 替换homebrew-core.git:
+# cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
+# git remote set-url origin https://mirrors.aliyun.com/homebrew/homebrew-core.git
+# # 应用生效
+# brew update
+# # 替换homebrew-bottles:
+# echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles' >> ~/.zshrc
+# source ~/.zshrc
 
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
+# 恢复
+# 重置brew.git:
+# cd "$(brew --repo)"
+# git remote set-url origin https://github.com/Homebrew/brew.git
+# # 重置homebrew-core.git:
+# cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
+# git remote set-url origin https://github.com/Homebrew/homebrew-core.git
+
+# export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+# export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+# export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
 
 # 升级 oh-my-zsh
 # 手动执行 upgrade_oh_my_zsh
@@ -195,18 +215,19 @@ export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottl
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-export PATH="/Users/dwd/opt/anaconda3/bin:$PATH"
+export PATH="/Users/$(whoami)/opt/anaconda3/bin:$PATH"
 # >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/Users/dwd/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# # !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/Users/yuemeng/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 # if [ $? -eq 0 ]; then
 #     eval "$__conda_setup"
 # else
-#     if [ -f "/Users/dwd/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-#         . "/Users/dwd/opt/anaconda3/etc/profile.d/conda.sh"
+#     if [ -f "/Users/yuemeng/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "/Users/yuemeng/opt/anaconda3/etc/profile.d/conda.sh"
 #     else
-#         export PATH="/Users/dwd/opt/anaconda3/bin:$PATH"
+#         export PATH="/Users/yuemeng/opt/anaconda3/bin:$PATH"
 #     fi
 # fi
 # unset __conda_setup
 # <<< conda initialize <<<
+
