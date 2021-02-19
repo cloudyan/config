@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+'use strict';
+
+const fs = require('fs');
+const path = require('path');
+
+const cwd = process.cwd();
+const projjConfig = JSON.parse(process.env.PROJJ_HOOK_CONFIG);
+const gitConfig = path.join(cwd, '.git/config');
+
+// console.log('projjConfig', projjConfig, cwd, gitConfig);
+// ~/code/github.com/popomore/projj
+// ~/code/github.com/popomore/projj/.git/config
+if (!fs.existsSync(gitConfig)) {
+  return;
+}
+
+for (let key in projjConfig) {
+  if (cwd.indexOf(key) > -1) {
+    const { name, email } = projjConfig[key];
+    fs.appendFileSync(gitConfig, `[user]\n  name = ${name}\n  email = ${email}\n`);
+    break;
+  }
+}

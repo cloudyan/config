@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+'use strict';
+
+// clean
+
+const cp = require('child_process');
+const cwd = process.cwd();
+const config = JSON.parse(process.env.PROJJ_HOOK_CONFIG);
+if (config.node_modules === true) {
+  cp.spawn('rm', [ '-rf', 'node_modules' ]);
+}
