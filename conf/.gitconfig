@@ -11,6 +11,12 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[hub]
+	protocol = https
+[color]
+	ui = true
+[pull]
+	rebase = true
 [push]
 	default = simple
 [alias]
@@ -29,10 +35,16 @@
 	helper = osxkeychain
 
 [http]
-	postBuffer = 524288000
-	# proxy = socks5://127.0.0.1:1086
+	postBuffer = 4194304000
+	proxy = socks5://127.0.0.1:7890
 [https]
-	postBuffer = 524288000
-	# proxy = socks5://127.0.0.1:1086
-[hub]
-	protocol = https
+	postBuffer = 4194304000
+	proxy = socks5://127.0.0.1:7890
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[init]
+	templatedir = ~/.git_template

@@ -1,0 +1,40 @@
+{
+  "base": [
+    "/Users/xxx/code"
+  ],
+  "alias": {
+  },
+  "hooks": {
+    "postadd": "projj_git_config_user",
+    "clean": "clean"
+  },
+  "clean": {
+    "node_modules": true
+  },
+  "postadd": {
+    "gitlab.xxx.com": {
+      "name": "yourname", // 公司内部建议使用中文
+      "email": "xxx@xxx.com"
+    },
+    "gitee.com": {
+      "name": "yournickname",
+      "email": "youremail@email.com"
+    },
+    "e.coding.net": {
+      "name": "yournickname",
+      "email": "youremail@email.com"
+    },
+    "gitlab.xxx.com": {
+      "name": "yourname",
+      "email": "youremail@email.com"
+    },
+    "code.aliyun.com": {
+      "name": "yournickname",
+      "email": "youremail@email.com"
+    },
+    "github.com": {
+      "name": "yournickname",
+      "email": "youremail@email.com"
+    }
+  }
+}

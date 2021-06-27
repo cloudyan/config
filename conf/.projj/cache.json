@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "/Users/xxx/code/github.com/popomore/projj": {
+    "repo": "https://github.com/popomore/projj.git"
+  },
+  "/Users/xxx/code/github.com/popomore/projj-hooks": {
+    "repo": "https://github.com/popomore/projj-hooks.git"
+  }
+}
